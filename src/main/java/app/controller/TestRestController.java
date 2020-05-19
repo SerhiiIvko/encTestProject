@@ -31,19 +31,23 @@ public class TestRestController {
 
     @PostMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> postEncryptionMessage(@PathVariable("id") Long id) {
-        String response = createResponse(id);
-        logResponse(response);
-        Map<String, Object> resp = new LinkedHashMap<>();
-        resp.put(fio, response);
-        return ResponseEntity.status(200).body(resp);
+        String response = createResponseMessage(id);
+        logResponseMessage(response);
+        Map<String, Object> responseMap = new LinkedHashMap<>();
+        responseMap.put(fio, response);
+        return ResponseEntity.status(200).body(responseMap);
     }
 
-    private String createResponse(Long id) {
+    private String createResponseMessage(Long id) {
         return pathVariableValidationService.validate(id) ? ApplicationConstants.FIO : null;
     }
 
-    private void logResponse(String response){
-        LOGGER.info(response != null ? ApplicationConstants.ENCRYPTION_MSG + encryptionService.encrypt(response) : ApplicationConstants.ENCRYPTION_MSG + response);
-        LOGGER.info(response != null ? ApplicationConstants.DECRYPTION_MSG + encryptionService.decrypt(response) : ApplicationConstants.DECRYPTION_MSG + response);
+    private void logResponseMessage(String response) {
+        LOGGER.info(response != null
+                ? ApplicationConstants.ENCRYPTION_MSG + encryptionService.encrypt(response)
+                : ApplicationConstants.ENCRYPTION_MSG + response);
+        LOGGER.info(response != null
+                ? ApplicationConstants.DECRYPTION_MSG + encryptionService.decrypt(response)
+                : ApplicationConstants.DECRYPTION_MSG + response);
     }
 }

@@ -4,7 +4,7 @@ import app.encryptor.EncryptionService;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class EncryptionServiceImplTest {
     private EncryptionService encryptionService;
@@ -13,7 +13,7 @@ public class EncryptionServiceImplTest {
     String textToEncrypt3;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         encryptionService = new EncryptionServiceImpl();
         textToEncrypt1 = "Hello";
         textToEncrypt2 = "";
