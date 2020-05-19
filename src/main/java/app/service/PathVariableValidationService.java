@@ -1,5 +1,5 @@
 package app.service;
 
-public interface ValidationService {
+public interface PathVariableValidationService {
     boolean validate(Long id);
 }

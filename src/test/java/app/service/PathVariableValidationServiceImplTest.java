@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ValidationServiceImplTest {
-    private ValidationService service;
+public class PathVariableValidationServiceImplTest {
+    private PathVariableValidationService service;
     private Long id;
 
     @Test
     public void validateIfIdIsOne() {
-        service = new ValidationServiceImpl();
+        service = new PathVariableValidationServiceImpl();
         id = 1L;
         boolean response = service.validate(id);
         assertTrue(response);
@@ -18,7 +18,7 @@ public class ValidationServiceImplTest {
 
     @Test
     public void validateIfIdIsNotOne() {
-        service = new ValidationServiceImpl();
+        service = new PathVariableValidationServiceImpl();
         id = 2L;
         boolean response = service.validate(id);
         assertFalse(response);
@@ -26,7 +26,7 @@ public class ValidationServiceImplTest {
 
     @Test(expected = NullPointerException.class)
     public void validateIfIdIsNull() {
-        service = new ValidationServiceImpl();
+        service = new PathVariableValidationServiceImpl();
         id = null;
         service.validate(id);
     }

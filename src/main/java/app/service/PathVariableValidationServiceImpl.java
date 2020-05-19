@@ -4,7 +4,7 @@ import app.constants.ApplicationConstants;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ValidationServiceImpl implements ValidationService {
+public class PathVariableValidationServiceImpl implements PathVariableValidationService {
 
     @Override
     public boolean validate(Long id) {
