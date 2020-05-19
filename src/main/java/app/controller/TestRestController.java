@@ -29,10 +29,8 @@ public class TestRestController {
         this.pathVariableValidationService = pathVariableValidationService;
     }
 
-
     @PostMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> postEncryptionMessage(@PathVariable("id") Long id) {
-
         String response = createResponse(id);
         logResponse(response);
         Map<String, Object> resp = new LinkedHashMap<>();

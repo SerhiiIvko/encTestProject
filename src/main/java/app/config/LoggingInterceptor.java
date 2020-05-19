@@ -38,7 +38,6 @@ public class LoggingInterceptor implements ClientHttpRequestInterceptor {
     }
 
     private void logResponse(ClientHttpResponse response) throws IOException {
-
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("============================response begin==========================================");
             LOGGER.debug("Response body: {}" + StreamUtils.copyToString(response.getBody(), Charset.defaultCharset()));

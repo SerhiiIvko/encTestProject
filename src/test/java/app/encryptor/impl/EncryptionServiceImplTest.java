@@ -22,13 +22,19 @@ public class EncryptionServiceImplTest {
 
     @Test
     public void encryptIfAllParamsAreCorrect() {
+        //WHEN:
         String encrypt = encryptionService.encrypt(textToEncrypt1);
+
+        //THEN:
         assertNotNull(encrypt);
     }
 
     @Test
     public void encryptIfTextForEncryptionIsEmpty() {
+        //WHEN:
         String encrypt = encryptionService.encrypt(textToEncrypt2);
+
+        //THEN:
         assertNotNull(encrypt);
     }
 
@@ -39,13 +45,19 @@ public class EncryptionServiceImplTest {
 
     @Test
     public void decryptIfAllParamsAreCorrect() {
+        //WHEN:
         String decrypt = encryptionService.decrypt(textToEncrypt1);
+
+        //THEN:
         assertNotNull(decrypt);
     }
 
     @Test
     public void decryptIfTextForDecryptionIsEmpty() {
+        //WHEN:
         String decrypt = encryptionService.decrypt(textToEncrypt2);
+
+        //THEN:
         assertNotNull(decrypt);
     }
 
